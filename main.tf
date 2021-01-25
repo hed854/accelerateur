@@ -27,6 +27,8 @@ resource "google_compute_instance" "default" {
     }
   }
 
+  // according to quotas config, the basic Gcloud account can only do preemptive machines w/ GPU
+  // GPU machines must have TERMINATE on maintennace
   scheduling {
     preemptible = true
     automatic_restart = false
